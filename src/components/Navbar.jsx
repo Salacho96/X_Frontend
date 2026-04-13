@@ -7,8 +7,8 @@ export default function Navbar() {
   return (
     <nav style={{ display: 'flex', gap: '1rem', padding: '1rem', borderBottom: '1px solid #ccc' }}>
       <Link to="/">Timeline</Link>
-      <Link to="/search">Buscar</Link>
-      <Link to={`/profile/${user?.username}`}>Mi perfil</Link>
+      <Link to="/search">Search</Link>
+      <Link to={`/profile/${user?.username}`}>My Profile</Link>
       <button onClick={logout}>Logout</button>
     </nav>
   )

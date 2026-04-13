@@ -16,15 +16,15 @@ export default function Search() {
 
   return (
     <div style={{ maxWidth: '600px', margin: '1rem auto', padding: '1rem' }}>
-      <h2>Buscar usuarios</h2>
+      <h2>Search for users</h2>
       <input
         type="text"
-        placeholder="Buscar por username..."
+        placeholder="Search by username..."
         value={query}
         onChange={handleSearch}
         style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
       />
-      {results.length === 0 && query && <p>No se encontraron usuarios.</p>}
+      {results.length === 0 && query && <p>No users found.</p>}
       {results.map(user => (
         <div key={user.id} style={{ border: '1px solid #ccc', padding: '0.5rem', margin: '0.5rem 0' }}>
           <Link to={`/profile/${user.username}`}>

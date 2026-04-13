@@ -14,13 +14,13 @@ export default function Login() {
       await login(form.email, form.password)
       navigate('/')
     } catch (err) {
-      setError(err.response?.data?.message || 'Error al iniciar sesión')
+      setError(err.response?.data?.message || 'Error logging in')
     }
   }
 
   return (
     <div style={{ maxWidth: '400px', margin: '2rem auto', padding: '1rem' }}>
-      <h2>Iniciar sesión</h2>
+      <h2>X Clone Login</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         <input
           type="email"
@@ -37,9 +37,9 @@ export default function Login() {
           required
         />
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Entrar</button>
+        <button type="submit">Login</button>
       </form>
-      <p>¿No tenés cuenta? <Link to="/register">Registrate</Link></p>
+      <p>Don't have an account? <Link to="/register">Register</Link></p>
     </div>
   )
 }

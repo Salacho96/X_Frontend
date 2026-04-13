@@ -52,7 +52,7 @@ export default function Profile() {
     fetchProfile()
   }
 
-  if (!profile) return <p>Cargando...</p>
+  if (!profile) return <p>Loading...</p>
 
   return (
     <div style={{ maxWidth: '600px', margin: '1rem auto', padding: '1rem' }}>
@@ -68,14 +68,14 @@ export default function Profile() {
               style={{ width: '100%', padding: '0.5rem' }}
             />
             <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem' }}>
-              <button onClick={handleSaveBio}>Guardar</button>
-              <button onClick={() => setEditingBio(false)}>Cancelar</button>
+              <button onClick={handleSaveBio}>Save</button>
+              <button onClick={() => setEditingBio(false)}>Cancel</button>
             </div>
           </div>
         ) : (
           <div>
             <p>{profile.bio || 'Sin bio'}</p>
-            <button onClick={() => setEditingBio(true)}>✏️ Editar bio</button>
+            <button onClick={() => setEditingBio(true)}>✏️ Edit bio</button>
           </div>
         )
       ) : (
@@ -86,7 +86,7 @@ export default function Profile() {
 
       {user.username !== username && (
         <button onClick={handleFollow}>
-          {following ? 'Dejar de seguir' : 'Seguir'}
+          {following ? 'Unfollow' : 'Follow'}
         </button>
       )}
 

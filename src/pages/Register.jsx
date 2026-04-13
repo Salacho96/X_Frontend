@@ -14,7 +14,7 @@ export default function Register() {
       await register(form.email, form.username, form.password)
       navigate('/')
     } catch (err) {
-      setError(err.response?.data?.message || 'Error al registrarse')
+      setError(err.response?.data?.message || 'Error registering')
     }
   }
 
@@ -44,9 +44,9 @@ export default function Register() {
           required
         />
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Registrarse</button>
+        <button type="submit">Register</button>
       </form>
-      <p>¿Ya tenés cuenta? <Link to="/login">Iniciá sesión</Link></p>
+      <p>Already have an account? <Link to="/login">Login</Link></p>
     </div>
   )
 }

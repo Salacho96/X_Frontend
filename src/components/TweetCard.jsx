@@ -14,7 +14,7 @@ export default function TweetCard({ tweet, onDelete, onLike }) {
   }
 
   const handleDelete = async () => {
-    if (!window.confirm('¿Eliminar tweet?')) return
+    if (!window.confirm('Eliminar Tweet?')) return
     await api.delete(`/tweets/${tweet.id}/`)
     if (onDelete) onDelete(tweet.id)
   }

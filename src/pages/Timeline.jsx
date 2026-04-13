@@ -22,12 +22,12 @@ export default function Timeline() {
     <div style={{ maxWidth: '600px', margin: '1rem auto', padding: '1rem' }}>
       <h2>Timeline</h2>
       <TweetForm onTweetCreated={() => fetchTimeline(1)} />
-      {tweets.length === 0 && <p>No hay tweets. ¡Seguí a alguien!</p>}
+      {tweets.length === 0 && <p>No tweets. keep going!</p>}
       {tweets.map(tweet => (
         <TweetCard key={tweet.id} tweet={tweet} />
       ))}
       {hasNext && (
-        <button onClick={() => fetchTimeline(page + 1)}>Cargar más</button>
+        <button onClick={() => fetchTimeline(page + 1)}>Load More</button>
       )}
     </div>
   )
